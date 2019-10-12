@@ -1,5 +1,11 @@
 const express=require('express');
+var bodyParser=require('body-parser');
 var app=new express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}))
+
+
 app.get('/',(req,res)=>{
     var mydata=[{"name":"Prince","Rollno":20},
                  {"name":"Prince","Rollno":20},
@@ -35,6 +41,31 @@ app.get('/largest',(req,res)=>{
     }
     var data={"number1":number1,"number2":number2,"number3":number3,"Largest ":result};
     res.json(data);
+})
+app.get('/addemployee',(req,res)=>{
+   var getName=req.body.name;
+   var getAge=req.body.age;
+   res.send("Name="+getName+",Age="+getAge);
+})
+app.get('/addProduct',(req,res)=>{
+    var getProductId=req.body.productId;
+    var getProductName=req.body.productName;
+    var getProductPrice=req.body.productPrice;
+    var getProductQuantity=req.body.productQuantity;
+    var data={"ProductId":getProductId,"productName":getProductName,"productPrice":getProductPrice,"productQuantity":getProductQuantity};
+    res.json(data);
+})
+app.get('/OddEven',(req,res)=>{
+    var getNumber=parseInt(req.body.number);
+    var result=""
+    if(getNumber%2==0){
+        result="EVEN"
+    }
+    else{
+        result="ODD"
+    }    
+    var data1={"Number":getNumber,"Result":result};
+    res.json(data1);
 })
 app.listen(3000,()=>{
     console.log("Server started");

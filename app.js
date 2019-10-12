@@ -69,8 +69,19 @@ app.get('/OddEven',(req,res)=>{
     var data1={"Number":getNumber,"Result":result};
     res.json(data1);
 })
+app.post('/addtwonumbers',(req,res)=>{
+    var getNumber1=parseInt(req.body.n1);
+    var getNumber2=parseInt(req.body.n2);
+    var result=getNumber1+getNumber2;
+     
+    var data1={"Result":result};
+    res.json(data1);
+})
 app.get('/myweb',(req,res)=>{
     res.render('index');
+})
+app.get('/addnumbers',(req,res)=>{
+    res.render('add');
 })
 app.listen(3000,()=>{
     console.log("Server started");

@@ -19,11 +19,21 @@ app.get('/addstudent',(req,res)=>{
     var roll=req.query.rollno;
     res.send("welcome"+getname+roll);
 })
-app.get('/addno',(req,res)=>{
+app.get('/largest',(req,res)=>{
     var number1=parseInt(req.query.n1);
     var number2=parseInt(req.query.n2);
-    var result=number1+number2
-    var data={"number1":number1,"number2":number2,"Result":result};
+    var number3=parseInt(req.query.n3);
+    var result=0;
+    if((number1>number2)&&(number1>number3)){
+        result=number1;
+    }
+    if((number2>number1)&&(number2>number3)){
+        result=number2;
+    }
+    if((number3>number1)&&(number3>number1)){
+        result=number3;
+    }
+    var data={"number1":number1,"number2":number2,"number3":number3,"Largest ":result};
     res.json(data);
 })
 app.listen(3000,()=>{

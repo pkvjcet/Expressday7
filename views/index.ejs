@@ -5,8 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-    <h1>Welcome EJS World</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-4"></div>
+            <div class="col col-12 col-sm-4">
+                <form action="/addemployee" method="POST">
+                        <table class="table">
+                                <tr>
+                                    <td>Employee Name</td>
+                                    <td><input type="text" class="form-control" name="name"></td>
+                                </tr>
+                                <tr>
+                                        <td>Employee Age</td>
+                                        <td><input type="text" class="form-control" name="age"></td>
+                                </tr>
+                                <tr>
+                                        <td><button type="reset" class="btn btn-primary">Reset</button></td>
+                                        <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                                </tr>
+                        </table>
+            
+                </form>
+                
+            </div>
+            <div class="col col-12 col-sm-4"></div>     
+         </div>
+    </div>
+
+    
 </body>
 </html>

@@ -44,7 +44,7 @@ app.get('/largest',(req,res)=>{
     var data={"number1":number1,"number2":number2,"number3":number3,"Largest ":result};
     res.json(data);
 })
-app.get('/addemployee',(req,res)=>{
+app.post('/addemployee',(req,res)=>{
    var getName=req.body.name;
    var getAge=req.body.age;
    res.send("Name="+getName+",Age="+getAge);

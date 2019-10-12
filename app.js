@@ -5,6 +5,8 @@ var app=new express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 
+app.set('view engine','ejs');
+
 
 app.get('/',(req,res)=>{
     var mydata=[{"name":"Prince","Rollno":20},
@@ -66,6 +68,9 @@ app.get('/OddEven',(req,res)=>{
     }    
     var data1={"Number":getNumber,"Result":result};
     res.json(data1);
+})
+app.get('/myweb',(req,res)=>{
+    res.render('index');
 })
 app.listen(3000,()=>{
     console.log("Server started");
